@@ -42,11 +42,11 @@ h1{font-size:clamp(42px,6vw,78px);line-height:.9;letter-spacing:-.055em;margin:8
 <p class="hero-copy">An interactive view of the scale, engagement, innovation and measurable outcomes behind Scott Williams' communications career.</p>
 <div class="explore">Explore the impact</div>
 <div class="nav" id="nav">
-<button class="active" data-id="transform">£36m transformation</button>
+<button data-id="transform">£36m transformation</button>
 <button data-id="growth">768% growth</button>
 <button data-id="hub">2,700 views</button>
 <button data-id="saving">24% saving</button>
-<button data-id="timeline">Career timeline</button>
+<button class="active" data-id="timeline">Career timeline</button>
 <button data-id="ai">AI & Automation</button>
 </div>
 <section class="panel" id="content"></section>
@@ -147,6 +147,6 @@ d.innerHTML=`<div class="eyebrow" style="color:var(--orange)">${x.type}</div><h3
 if(key==="approach")x.steps.forEach((_,i)=>setTimeout(()=>document.getElementById("f"+(i+1))?.classList.add("on"),i*180));
 }
 document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>render(b.dataset.id));
-render("transform");
+render("timeline");
 </script>
 </body></html>
