@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scott Williams — Career Impact</title>
+<style>
+:root{--orange:#E96A3D;--black:#161616;--cream:#FCEEE9;--bg:#F5F6F6;--muted:#666;--line:#DDD7D3;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--black);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1220px;margin:auto;padding:28px 24px 70px}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--orange)}
+h1{font-size:clamp(42px,6vw,78px);line-height:.9;letter-spacing:-.055em;margin:8px 0 15px}
+.hero-copy{font-size:20px;line-height:1.45;color:var(--muted);max-width:850px}
+.explore{font-size:11px;font-weight:900;letter-spacing:.13em;margin:30px 0 9px;color:var(--muted)}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nav button{appearance:none;border:1px solid var(--line);background:#fff;color:var(--black);padding:12px 16px;border-radius:999px;font-weight:900;font-size:14px;cursor:pointer;position:relative;overflow:hidden;transition:.22s}
+.nav button:hover{transform:translateY(-2px);border-color:var(--orange)}
+.nav button.active{background:var(--black);color:#fff;border-color:var(--black);box-shadow:0 8px 20px #16161618}
+.nav button.active:before{content:"";position:absolute;left:14px;right:14px;bottom:5px;height:2px;background:var(--orange);border-radius:4px}
+.panel{background:#fff;border-radius:30px;padding:38px;min-height:560px;box-shadow:0 18px 55px #1616160d;overflow:hidden;animation:panelIn .55s ease both}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+.eyebrow+.metric{margin-top:6px}.metric{font-size:clamp(68px,9vw,125px);font-weight:950;letter-spacing:-.07em;line-height:.82;margin-top:14px;animation:metricIn .7s cubic-bezier(.2,.8,.2,1) both}
+.label{font-size:24px;font-weight:900;line-height:1.15;margin-top:24px}.copy{font-size:18px;color:var(--muted);line-height:1.55;max-width:650px}
+.bigrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.stat{background:var(--cream);border-radius:18px;padding:17px 18px;min-width:145px;transition:.25s;animation:rise .5s ease both}.stat:hover{transform:translateY(-6px);box-shadow:0 12px 25px #16161615}.stat b{display:block;font-size:29px;letter-spacing:-.03em}.stat span{display:block;font-size:12px;font-weight:800;color:#666;margin-top:4px}
+.visual{height:390px;border-radius:24px;background:linear-gradient(135deg,#fff8f5,#f1edeb);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;animation:visualIn .7s .05s ease both}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,#fff9 49%,transparent 62%);transform:translateX(-120%);animation:shine 4s 1s ease-in-out infinite;pointer-events:none}
+.callout{position:absolute;background:var(--black);color:#fff;border-radius:14px;padding:10px 13px;font-size:12px;font-weight:900;box-shadow:0 9px 22px #16161620;animation:float 3s ease-in-out infinite}.callout.orange{background:var(--orange)}.callout:nth-of-type(2){animation-delay:.45s}
+.ring{width:235px;height:235px;border-radius:50%;background:conic-gradient(var(--orange) 0 90%,#d9d4d0 90%);display:grid;place-items:center;position:relative;animation:ringIn 1.05s ease both}.ring:after{content:"";width:160px;height:160px;border-radius:50%;background:#fff}.ringtext{position:absolute;z-index:2;text-align:center;font-weight:950;font-size:43px}.ringtext small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#666}
+.growth{width:76%;height:240px;display:flex;align-items:flex-end;gap:22px;position:relative;z-index:1}.gbar{flex:1;border-radius:15px 15px 4px 4px;background:#c9c2be;height:14%;transform-origin:bottom;animation:bar .9s ease both}.gbar.new{background:var(--orange);height:100%;animation:barBig 1.15s .15s cubic-bezier(.2,.8,.2,1) both}.tag{position:absolute;bottom:15px;font-size:11px;font-weight:900;color:#666}
+.compare{width:82%;position:relative;z-index:1}.track{height:28px;background:#ddd6d2;border-radius:30px;overflow:hidden}.fill{height:100%;background:var(--orange);width:76%;transition:.25s}.range{width:100%;accent-color:var(--orange);margin-top:24px}.saving-bubble{position:absolute;right:0;top:-48px;background:var(--black);color:#fff;padding:10px 13px;border-radius:13px;font-size:12px;font-weight:900}
+.timeline-box{margin-top:28px;background:linear-gradient(135deg,#fff8f5,#f3efed);padding:25px;border-radius:22px}.timeline{display:flex;gap:9px;flex-wrap:wrap}.timeline button{border:1px solid var(--line);background:#fff;padding:11px 14px;border-radius:999px;font-weight:900;color:var(--black);cursor:pointer;transition:.2s}.timeline button:hover{transform:translateY(-2px)}.timeline button.active{background:var(--orange);border-color:var(--orange);color:#fff;box-shadow:0 8px 20px #E96A3D35}.role{margin-top:18px;animation:roleIn .45s ease both}.role h2{font-size:30px;margin:0 0 5px}.rolemeta{font-size:12px;font-weight:900;color:var(--orange);text-transform:uppercase;letter-spacing:.1em}
+
+.ai-panel{background:var(--black);border-radius:26px;padding:32px;color:#fff;position:relative;overflow:hidden;min-height:680px}.ai-panel:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-210px;top:-280px;background:radial-gradient(circle,#E96A3D66,transparent 65%);animation:orb 4s ease-in-out infinite}.ai-panel:after{content:"AI";position:absolute;right:35px;bottom:-55px;font-size:230px;font-weight:950;color:#fff05;letter-spacing:-.08em;animation:aiWatermark 6s ease-in-out infinite}.ai-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;position:relative;z-index:2}.ai-kicker{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.15em}.ai-title{font-size:clamp(42px,5.3vw,70px);line-height:.88;letter-spacing:-.055em;font-weight:950;margin:10px 0 16px}.ai-lead{color:#ccc;font-size:17px;line-height:1.5;max-width:620px}.ai-example{border:1px solid #ffffff22;background:#ffffff08;border-radius:16px;padding:15px 17px;margin-top:12px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}.ai-example:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange);transform:scaleY(0);transform-origin:bottom;transition:.25s}.ai-example:hover,.ai-example.selected{border-color:var(--orange);background:#E96A3D16;transform:translateX(6px)}.ai-example.selected:before{transform:scaleY(1)}.ai-example b{font-size:15px}.ai-example small{display:block;color:#aaa;margin-top:4px;line-height:1.35}.ai-demo{background:#fff;color:var(--black);border-radius:22px;padding:25px;min-height:585px;box-shadow:0 15px 40px #0005;position:relative;overflow:hidden}.ai-demo h3{font-size:25px;margin:3px 0 7px}.ai-demo p{color:#666;line-height:1.45}.ai-stage{margin-top:18px;border-radius:17px;background:#f5f2f0;min-height:250px;position:relative;overflow:hidden;padding:18px}.ai-stage-label{font-size:10px;font-weight:950;letter-spacing:.12em;color:#777;text-transform:uppercase}.flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:18px 0}.flow span{padding:8px 10px;border-radius:10px;background:#eeeae7;font-size:10px;font-weight:900;transition:.35s}.flow span.on{background:var(--orange);color:#fff;transform:translateY(-4px);box-shadow:0 7px 16px #E96A3D35}.ai-result{border-left:4px solid var(--orange);padding:13px 15px;background:var(--cream);border-radius:0 14px 14px 0;animation:roleIn .45s ease both}.benefits{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.benefit{padding:11px;border:1px solid #eee6e1;border-radius:12px;font-size:11px;font-weight:800}.benefit strong{display:block;font-size:17px;margin-bottom:3px}.live-dot{display:inline-block;width:7px;height:7px;background:var(--orange);border-radius:50%;margin-right:6px;animation:livePulse 1s infinite}.feedback-chip{position:absolute;padding:7px 9px;background:#fff;border-radius:10px;font-size:10px;font-weight:800;box-shadow:0 5px 12px #16161615;animation:chipFly 2.8s ease-in-out infinite}.sentiment-ring{position:absolute;right:22px;top:55px;width:125px;height:125px;border-radius:50%;background:conic-gradient(var(--orange) 0 62%,#c9c1bd 62% 86%,#e2ddda 86%);display:grid;place-items:center;animation:ringPop 1s ease both}.sentiment-ring:after{content:"";width:80px;height:80px;border-radius:50%;background:#f5f2f0}.sentiment-text{position:absolute;z-index:2;text-align:center;font-size:18px;font-weight:950}.theme{position:absolute;left:18px;padding:7px 10px;border-radius:999px;background:#161616;color:#fff;font-size:10px;font-weight:900;animation:themeIn .55s both}.theme:nth-child(1){top:55px}.theme:nth-child(2){top:96px}.theme:nth-child(3){top:137px}.theme:nth-child(4){top:178px}.typing{display:flex;gap:5px;align-items:center;padding:12px 14px;background:#f1eeec;border-radius:15px;width:max-content;animation:messageIn .5s ease both}.typing i{width:6px;height:6px;background:#777;border-radius:50%;animation:typing 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}.channel-card{background:#fff;border:1px solid #e6e0dc;border-radius:13px;padding:12px;margin-top:9px;animation:cardIn .55s both}.channel-card b{font-size:10px;color:var(--orange);letter-spacing:.08em}.channel-card p{font-size:11px;margin:5px 0 0;color:#444}.chat{max-width:80%;padding:11px 13px;border-radius:15px;margin-top:9px;font-size:11px;line-height:1.35;animation:messageIn .5s both}.chat.user{background:#161616;color:#fff;margin-left:auto;border-bottom-right-radius:4px}.chat.ai{background:#f0ece9;border-bottom-left-radius:4px}.decision{display:flex;align-items:center;gap:9px;justify-content:center;margin-top:26px}.decision .node{padding:11px 13px;border-radius:12px;background:#fff;border:2px solid #ddd;font-size:11px;font-weight:900;animation:nodePop .5s both}.decision .node.active{border-color:var(--orange);box-shadow:0 7px 18px #E96A3D30}.arrow{font-weight:950;color:var(--orange)}.human-loop{margin-top:13px;text-align:center;font-size:10px;font-weight:900;color:#666}.human-loop strong{display:inline-block;background:var(--orange);color:#fff;padding:6px 9px;border-radius:999px;animation:humanPulse 2s infinite}
+@keyframes panelIn{from{opacity:0;transform:translateY(18px) scale(.99)}to{opacity:1;transform:none}}@keyframes metricIn{from{opacity:0;transform:translateY(25px) scale(.92)}to{opacity:1;transform:none}}@keyframes visualIn{from{opacity:0;transform:translateX(20px) scale(.97)}to{opacity:1;transform:none}}@keyframes shine{0%,55%{transform:translateX(-120%)}72%,100%{transform:translateX(120%)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}.ring.focus{transform:scale(1.08);filter:drop-shadow(0 12px 24px #E96A3D55)}.growth.focus .new{animation:barBig 1s cubic-bezier(.2,.8,.2,1)}
+@keyframes ringIn{from{opacity:0;transform:scale(.65) rotate(-55deg)}to{opacity:1;transform:none}}@keyframes bar{from{transform:scaleY(.03)}to{transform:scaleY(1)}}@keyframes barBig{from{transform:scaleY(.03)}to{transform:scaleY(1)}}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes roleIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@keyframes orb{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.12);opacity:1}}
+@keyframes aiWatermark{0%,100%{transform:translateY(0) rotate(-4deg);opacity:.03}50%{transform:translateY(-15px) rotate(3deg);opacity:.06}}@keyframes livePulse{50%{box-shadow:0 0 0 6px #E96A3D22}}@keyframes chipFly{0%{transform:translate(0,18px) scale(.7);opacity:0}18%,72%{opacity:1}100%{transform:translate(35px,-35px) scale(1);opacity:0}}@keyframes ringPop{from{opacity:0;transform:scale(.4) rotate(-80deg)}to{opacity:1;transform:none}}@keyframes themeIn{from{opacity:0;transform:translateX(-15px)}to{opacity:1;transform:none}}@keyframes messageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes typing{50%{transform:translateY(-4px);opacity:.45}}@keyframes cardIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}@keyframes nodePop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}@keyframes humanPulse{50%{transform:scale(1.06);box-shadow:0 0 0 7px #E96A3D20}}@media(max-width:800px){.grid,.ai-grid{grid-template-columns:1fr}.panel{padding:25px}.visual{height:300px}.ai-panel{padding:24px}.ai-demo{min-height:0}.benefits{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">Internal communications · Engagement · Change</div>
+<h1>Numbers with a story.</h1>
+<p class="hero-copy">An interactive view of the scale, engagement, innovation and measurable outcomes behind Scott Williams' communications career.</p>
+<div class="explore">Explore the impact</div>
+<div class="nav" id="nav">
+<button class="active" data-id="transform">£36m transformation</button>
+<button data-id="growth">768% growth</button>
+<button data-id="hub">2,700 views</button>
+<button data-id="saving">24% saving</button>
+<button data-id="timeline">Career timeline</button>
+<button data-id="ai">AI & Automation</button>
+</div>
+<section class="panel" id="content"></section>
+</div>
+<script>
+const D={
+transform:{ey:"University of Nottingham · Digital transformation",title:"£36m",label:"Network transformation",copy:"Lead stakeholder mapping, engagement and communications for a major university transformation affecting 30,000+ staff and students.",visual:`<div class="ring" onclick="this.classList.toggle('focus')" title="Click to reveal the story"><div class="ringtext">90%<small>call reduction</small></div></div><div class="callout orange" style="top:24px;left:20px">30,000+ people</div><div class="callout" style="right:18px;bottom:25px">£36m programme</div>`,stats:[["30,000+","people affected"],["90%","Service Desk call reduction"],["£36m","transformation value"]],note:""},
+growth:{ey:"John Taylor Hospice · Digital engagement",title:"768%",label:"Facebook follower growth",copy:"Digital engagement and communications activity contributed to substantial growth in the hospice's social audience.",visual:`<div class="growth" onclick="this.classList.toggle('focus')" title="Click to reveal growth"><div class="gbar"></div><div class="gbar new"></div></div><div class="tag" style="left:17%">BEFORE</div><div class="tag" style="right:15%">AFTER</div><div class="callout orange" style="top:22px;right:20px">+768%</div>`,stats:[["768%","Facebook follower growth"],["30%","increase in donations"]],note:""},
+hub:{ey:"University of Nottingham · Career Development Hub",title:"2,700",label:"views from 245 unique viewers",copy:"The SharePoint Career Development Hub generated 2,700 views from 245 unique viewers in its first year.",visual:`<div class="growth"><div class="gbar" style="height:12%"></div><div class="gbar new"></div></div><div class="tag" style="left:17%">245 UNIQUE</div><div class="tag" style="right:14%">2,700 VIEWS</div><div class="callout" style="top:20px;left:20px">≈11 views / person</div>`,stats:[["245","unique viewers"],["2,700","views"],["≈11×","views per viewer"]],note:""},
+saving:{ey:"University of Nottingham · Print transformation",title:"24%",label:"saving",copy:"Led engagement for a major print transformation, coordinating Print Champions to support adoption, local engagement and business readiness.",visual:`<div class="compare"><div class="saving-bubble" id="bubble">24% saving</div><div class="track"><div class="fill" id="fill"></div></div><input class="range" id="slider" type="range" min="0" max="24" value="24"><div style="display:flex;justify-content:space-between;color:#666;font-size:12px"><span>0%</span><span>24%</span></div></div>`,stats:[["24%","saving"],["Carbon-neutral","service"]],note:""},
+timeline:{ey:"15+ years · four organisations",title:"Career impact",label:"Select a role",copy:"Explore the scale and outcomes associated with each stage of the career."},
+ai:{ey:"AI & Automation · Applied thinking",title:"AI & Automation",label:"Practical innovation, grounded in the problem",copy:"I start with the business problem, understand the users and process, then assess where AI or automation can add measurable value. The aim is practical improvement — not technology for its own sake."}
+};
+const roles=[
+["2011–2014","University of Wolverhampton Students' Union",[["11","student staff & volunteers"],["14","volunteer team"]],"Launched the organisation's first newspaper and radio station, coordinating a 14-person volunteer team."],
+["2014–2021","John Taylor Hospice",[["30%","donation increase"],["768%","Facebook follower growth"]],"Led communications and digital engagement through NHS transition, charitable status and the formation of Birmingham Hospice."],
+["2021–2022","Brand786",[["8","multidisciplinary team"],["14","clients"],["70%","product sell-through"]],"Led an eight-person multidisciplinary team and developed integrated communications, brand and marketing strategies for 14 clients."],
+["2022–Present","University of Nottingham",[["£36m","network transformation"],["30,000+","people affected"],["90%","Service Desk call reduction"],["24%","print saving"]],"Lead communications across major transformation and organisational change, advising senior leaders and programme boards."]
+];
+const aiApproach={title:"My approach to AI & automation",type:"Working principle",desc:"Start with the business problem rather than the technology, then assess users, data readiness, feasibility, governance, testing and measurable value before scaling.",steps:["Problem","Users & process","Data & governance","Pilot & test","Measure & improve"],benefits:[["Problem first","Solve a real business need rather than starting with a tool."],["User centred","Design around the people who will use or be affected by it."],["Responsible","Consider security, permissions, data quality, bias and human oversight."],["Scalable","Build something supportable, measurable and proportionate to the need."]]};
+const aiExamples={
+data:{
+title:"Data analysis & audience sentiment",
+type:"Potential application",
+desc:"Use AI to analyse large volumes of qualitative feedback, identify recurring themes and surface audience sentiment — giving communicators a faster first view of what people are saying and where attention may be needed.",
+steps:["Collect feedback","Analyse themes","Sense sentiment","Human review","Act & measure"],
+benefits:[
+["Faster insight","Reduce the time spent manually reading and grouping large amounts of feedback."],
+["Theme detection","Identify recurring questions, concerns, positive themes and emerging issues."],
+["Audience insight","Compare sentiment and themes across different audiences, channels or time periods."],
+["Better decisions","Give communications teams evidence to inform messaging, engagement and follow-up."]
+]},
+assistant:{
+title:"Communications assistant",
+type:"Potential application",
+desc:"An AI assistant for communicators that can turn an approved brief or source material into useful first drafts, summaries, FAQs, stakeholder messages and channel variants — while keeping human review at the centre.",
+steps:["Brief","Draft","Adapt","Human review","Publish & learn"],
+benefits:[
+["Capacity","Reduce repetitive drafting so communicators can focus on strategy and relationships."],
+["Repurpose","Turn one approved source into email, intranet, briefing and FAQ formats."],
+["Consistency","Keep key messages aligned across channels and audiences."],
+["Scale","Support more audiences without creating proportionally more manual work."]
+]},
+onboarding:{
+title:"New starter onboarding",
+type:"Potential application",
+desc:"An AI-supported onboarding experience that gives new starters quick access to relevant information, answers common questions and guides them towards the people, systems and resources they need.",
+steps:["New starter","Ask","Personalise","Guide","Feedback & improve"],
+benefits:[
+["Faster start","Help new starters find useful information without searching multiple places."],
+["Always available","Provide support outside scheduled induction sessions."],
+["Personalised","Surface information based on role, team or stage of onboarding."],
+["Less admin","Reduce repetitive questions and routine support for HR, managers and service teams."]
+]},
+servicedesk:{
+title:"IT Service Desk assistant",
+type:"Potential application",
+desc:"An AI assistant that can help users diagnose common issues, find approved guidance and decide whether a problem can be resolved through self-service or needs escalation to the Service Desk.",
+steps:["User problem","Diagnose","Guide","Escalate if needed","Learn from outcomes"],
+benefits:[
+["Fewer avoidable calls","Resolve straightforward, repeatable questions through guided self-service."],
+["24/7 first-line help","Give users immediate support when the Service Desk is unavailable."],
+["Faster resolution","Collect useful context before escalation so support teams can start with better information."],
+["Consistent guidance","Direct users towards approved, current knowledge and processes."]
+]}
+};
+function render(id){
+document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("active",b.dataset.id===id));
+if(id==="timeline"){renderTimeline();return}
+if(id==="ai"){renderAI();return}
+const d=D[id];
+document.getElementById("content").innerHTML=`<div class="grid"><div><div class="eyebrow">${d.ey}</div><div class="metric">${d.title}</div><div class="label">${d.label}</div><p class="copy">${d.copy}</p><div class="bigrow">${d.stats.map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div></div><div class="visual">${d.visual}</div></div>`;
+if(id==="saving"){const s=document.getElementById("slider"),f=document.getElementById("fill"),b=document.getElementById("bubble");s.oninput=()=>{f.style.width=(100-s.value/24*76)+"%";b.textContent=s.value+"% saving"}}
+}
+function renderTimeline(){
+document.getElementById("content").innerHTML=`<div class="grid"><div><div class="eyebrow">${D.timeline.ey}</div><div class="metric">${D.timeline.title}</div><div class="label">${D.timeline.label}</div><p class="copy">${D.timeline.copy}</p><div class="timeline-box"><div class="timeline" id="roles">${roles.map((r,i)=>`<button type="button" data-role="${i}">${r[1]} · ${r[0]}</button>`).join("")}</div><div class="role" id="role"></div></div></div><div class="visual"><div style="width:85%;position:relative"><div style="height:5px;background:#d8d0cc;border-radius:5px"></div>${roles.map((r,i)=>`<div style="position:absolute;top:-7px;left:${i*33}%;width:19px;height:19px;border-radius:50%;background:${i===3?'var(--orange)':'var(--black)'};box-shadow:0 0 0 6px #fff"></div>`).join("")}<div style="margin-top:42px;display:flex;justify-content:space-between;font-size:12px;font-weight:900;color:#666">${roles.map(r=>`<span>${r[0]}</span>`).join("")}</div><div class="callout orange" style="top:70px;left:48%">15+ years</div><div class="callout" style="right:0;top:145px">Change · Engagement · Digital</div></div></div></div>`;
+document.querySelectorAll("#roles button").forEach(b=>b.onclick=()=>showRole(+b.dataset.role));
+showRole(3);
+}
+function showRole(i){
+const r=roles[i];document.querySelectorAll("#roles button").forEach((b,j)=>b.classList.toggle("active",j===i));
+document.getElementById("role").innerHTML=`<h2>${r[1]}</h2><div class="rolemeta">${r[0]}</div><p class="copy">${r[3]}</p><div class="bigrow">${r[2].map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div>`;
+}
+function renderAI(){
+document.getElementById("content").innerHTML=`<div class="ai-panel"><div class="ai-grid"><div><div class="ai-kicker">AI & AUTOMATION · APPLIED THINKING</div><div class="ai-title">AI that solves a problem.<br>Not AI for the sake of AI.</div><p class="ai-lead">I start with the business problem, understand the users and process, then assess where AI or automation can add measurable value.</p><div style="margin-top:22px;font-size:10px;font-weight:950;letter-spacing:.12em;color:#999;text-transform:uppercase"><span class="live-dot"></span>Choose a practical example</div><div class="ai-example selected" data-ai="data"><b>Data analysis / audience sentiment</b><small>See feedback become themes, sentiment and actionable insight.</small></div><div class="ai-example" data-ai="assistant"><b>Communications assistant</b><small>See one approved brief become content for different audiences.</small></div><div class="ai-example" data-ai="onboarding"><b>New starter onboarding</b><small>See an employee question become guided, personalised support.</small></div><div class="ai-example" data-ai="servicedesk"><b>IT Service Desk assistant</b><small>See a common IT problem move through diagnosis and escalation.</small></div><div class="ai-example" data-ai="approach"><b>My approach to AI & automation</b><small>See the principles I would apply before scaling a solution.</small></div></div><div class="ai-demo" id="aiDemo"></div></div></div>`;
+document.querySelectorAll(".ai-example").forEach(e=>e.onclick=()=>showAI(e.dataset.ai));showAI("data");
+}
+function showAI(key){
+document.querySelectorAll(".ai-example").forEach(e=>e.classList.toggle("selected",e.dataset.ai===key));
+const x=key==="approach"?aiApproach:aiExamples[key];const d=document.getElementById("aiDemo");
+let stage="";
+if(key==="data"){stage=`<div class="ai-stage"><div class="ai-stage-label">Live analysis</div><div class="feedback-chip" style="left:25px;top:80px">"Need clearer updates"</div><div class="feedback-chip" style="left:95px;top:185px;animation-delay:.4s">"Training was useful"</div><div class="feedback-chip" style="left:190px;top:120px;animation-delay:.8s">"Where do I find this?"</div><div class="feedback-chip" style="left:275px;top:205px;animation-delay:1.2s">"More regular comms"</div><div class="sentiment-ring"><div class="sentiment-text">62%<small style="display:block;font-size:8px;color:#666">positive</small></div></div><div class="theme">Communication</div><div class="theme">Access & support</div><div class="theme">Change concerns</div><div class="theme">Training</div></div>`}
+if(key==="assistant"){stage=`<div class="ai-stage"><div class="ai-stage-label">One approved source → multiple outputs</div><div class="typing"><b>Brief received</b>&nbsp; • &nbsp; drafting...</div><div class="channel-card" style="animation-delay:.35s"><b>EMAIL</b><p>Clear subject line + key action + deadline</p></div><div class="channel-card" style="animation-delay:.55s"><b>INTRANET</b><p>What is changing · Why · What you need to do · FAQs</p></div><div class="channel-card" style="animation-delay:.75s"><b>LEADER BRIEFING</b><p>Three key messages + anticipated questions</p></div><div class="human-loop">AI accelerates the first draft → <strong>human review</strong> → publish</div></div>`}
+if(key==="onboarding"){stage=`<div class="ai-stage"><div class="ai-stage-label">New starter conversation</div><div class="chat user" style="animation-delay:.05s">Where do I collect my laptop?</div><div class="chat ai" style="animation-delay:.3s">Your equipment collection details are here. I can also show you the IT setup checklist.</div><div class="chat user" style="animation-delay:.55s">Who do I contact if I cannot access my account?</div><div class="chat ai" style="animation-delay:.8s">I can guide you through the approved access route or connect you to the right support team.</div><div class="human-loop">Routine guidance is automated → <strong>exceptions go to people</strong></div></div>`}
+if(key==="servicedesk"){stage=`<div class="ai-stage"><div class="ai-stage-label">Guided diagnosis</div><div class="decision"><div class="node active">Wi-Fi problem</div><div class="arrow">→</div><div class="node" style="animation-delay:.25s">Diagnose</div><div class="arrow">→</div><div class="node" style="animation-delay:.5s">Self-service</div></div><div class="decision" style="margin-top:15px"><div class="node" style="animation-delay:.75s">Still unresolved?</div><div class="arrow">→</div><div class="node active" style="animation-delay:1s">Escalate to Service Desk</div></div><div class="human-loop">AI handles routine diagnosis → <strong>human support handles exceptions</strong></div></div>`}
+if(key==="approach"){stage=`<div class="ai-stage"><div class="ai-stage-label">Before anything is built</div><div class="flow">${x.steps.map((s,i)=>`<span id="f${i+1}">${s}</span>${i<x.steps.length-1?'<b>→</b>':''}`).join("")}</div><div style="margin-top:30px;padding:18px;background:#fff;border-radius:15px;border:1px solid #eee"><b>Scale only when the evidence says it should.</b><p style="font-size:12px;margin-bottom:0">Data quality · security · permissions · governance · testing · monitoring · ownership · support</p></div></div>`}
+d.innerHTML=`<div class="eyebrow" style="color:var(--orange)">${x.type}</div><h3>${x.title}</h3><p>${x.desc}</p>${stage}<div class="ai-result" style="margin-top:16px"><b>Why it matters</b><br><span style="color:#555">AI handles repeatable work; people retain judgement, review, approval and accountability.</span></div><div class="benefits">${x.benefits.map(b=>`<div class="benefit"><strong>${b[0]}</strong>${b[1]}</div>`).join("")}</div>`;
+if(key==="approach")x.steps.forEach((_,i)=>setTimeout(()=>document.getElementById("f"+(i+1))?.classList.add("on"),i*180));
+}
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>render(b.dataset.id));
+render("transform");
+</script>
+</body></html>
